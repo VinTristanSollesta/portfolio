@@ -8,30 +8,58 @@ const Header = () => {
   return (
     <Grid container sx={styles.header}>
       <Grid item sm={6} sx={styles.headerLogo}>
-        <Typography variant="h5">VIN TRISTAN SOLLESTA</Typography>
+        <Typography variant="h5">VIN TRISTAN G. SOLLESTA</Typography>
       </Grid>
       <Grid item sm={6}>
         <Grid container>
           <Grid item sm={3}>
-            <Link href="#" underline="none" variant="inherit">
-              <Typography style={styles.headerText}>Home</Typography>
-            </Link>
+            <Typography style={styles.headerText}>
+              <Link
+                href="home"
+                underline="none"
+                variant="inherit"
+                sx={{ padding: 3 }}
+              >
+                Home
+              </Link>
+            </Typography>
           </Grid>
           <Grid item sm={3}>
-            <Link href="#" underline="none" variant="inherit">
-              <Typography style={styles.headerText}>About</Typography>
-            </Link>
+            <Typography style={styles.headerText}>
+              <Link
+                href="profile"
+                underline="none"
+                variant="inherit"
+                sx={{ padding: 3 }}
+              >
+                Profile
+              </Link>
+            </Typography>
           </Grid>
           <Grid item sm={3}>
-            <Link href="" underline="none" variant="inherit">
-              <Typography style={styles.headerText}>Portfolio</Typography>
-            </Link>
+            <Typography style={styles.headerText}>
+              <Link
+                href="portfolio"
+                underline="none"
+                variant="inherit"
+                sx={{ padding: 3 }}
+              >
+                Portfolio
+              </Link>
+            </Typography>
           </Grid>
 
           <Grid item sm={3}>
-            <Link href="#" underline="none" variant="inherit">
-              <Typography style={styles.headerText}>Contact</Typography>
-            </Link>
+            <Typography style={styles.headerText}>
+              <Link
+                href="contact"
+                underline="none"
+                variant="inherit"
+                sx={{ padding: 3 }}
+              >
+                Contact
+              </Link>
+            </Typography>
           </Grid>
         </Grid>
       </Grid>

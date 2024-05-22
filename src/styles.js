@@ -1,3 +1,4 @@
+import zIndex from "@mui/material/styles/zIndex";
 import colors from "./colors";
 
 const styles = {
@@ -16,8 +17,9 @@ const styles = {
   },
   //headers
   header: {
-    // backgroundColor: `${colors.tertiary}60`,
-    width: "100%",
+    backgroundColor: `${colors.tertiary}60`,
+    position: "absolute",
+    zIndex: 3,
     height: "10vh",
     paddingX: 5,
     alignItems: "center",
@@ -33,7 +35,6 @@ const styles = {
 
   //container
   container: {
-    height: "80vh",
     paddingX: 5,
     backgroundColor: colors.light,
   },
@@ -41,11 +42,11 @@ const styles = {
   //footer
   footerContainer: {
     display: "flex",
-    height: "10vh",
+    height: "30vh",
     alignItems: "center",
     textAlign: "center",
     justifyContent: "center",
-    // backgroundColor: `${colors.tertiary}`,
+    // backgroundColor: `${colors.tertiary}60`,
   },
   linkFooterStyle: {
     display: "flex",

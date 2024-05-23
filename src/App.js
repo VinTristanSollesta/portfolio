@@ -11,6 +11,7 @@ import Profile from "./components/profile";
 import Portfolio from "./components/portfolio";
 
 const router = createBrowserRouter([
+  { path: "/", element: <LandingPage /> },
   {
     path: "/home",
     element: <LandingPage />,

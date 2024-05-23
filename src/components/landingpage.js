@@ -7,18 +7,36 @@ import Image1 from "../assets/1.png";
 import Image2 from "../assets/2.png";
 import Image3 from "../assets/3.png";
 import CoverPage from "./coverpage";
+import Colors from "../colors";
 
 const LandingPage = () => {
   const [users, setUsers] = useState("");
   return (
     <Box>
       <CoverPage />
-      <Grid container sx={styles.container}>
-        <Grid item sm={12} xs={12}></Grid>
-        <Grid item sm={6} xs={12}>
+
+      <Grid
+        container
+        sx={[
+          styles.container,
+          {
+            "& .landingPageItem": {
+              paddingBottom: "10vh",
+            },
+          },
+        ]}
+      >
+        <Grid item sm={12} xs={12} className="landingPageItem"></Grid>
+        <Grid item sm={6} xs={12} className="landingPageItem">
           <img src={Image1} style={{ width: "100%" }} />
         </Grid>
-        <Grid item sm={6} xs={12} sx={{ padding: 5 }}>
+        <Grid
+          item
+          sm={6}
+          xs={12}
+          className="landingPageItem"
+          sx={{ padding: 5 }}
+        >
           <Typography variant="h5">
             Lorem Ipsum Dolor est te seraphim. Lorem Ipsum Dolor est te
             Serpahim.Lorem Ipsum Dolor est te seraphim. Lorem Ipsum Dolor est te
@@ -28,7 +46,7 @@ const LandingPage = () => {
           </Typography>
         </Grid>
 
-        <Grid item sm={12} xs={12}>
+        <Grid item sm={12} xs={12} className="landingPageItem">
           <img src={Image3} style={{ width: "100%" }} />
         </Grid>
       </Grid>

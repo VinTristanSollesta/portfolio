@@ -7,12 +7,12 @@ const Header = () => {
   const [buttonPress, setButtonPress] = useState(false);
   return (
     <Grid container sx={styles.header}>
-      <Grid item sm={6} sx={styles.headerLogo}>
+      <Grid item xs={12} sm={6} sx={styles.headerLogo}>
         <Typography variant="h5">VIN TRISTAN G. SOLLESTA</Typography>
       </Grid>
       <Grid item sm={6}>
         <Grid container>
-          <Grid item sm={3}>
+          <Grid item sm={3} xs={12}>
             <Typography style={styles.headerText}>
               <Link
                 href="home"
@@ -24,7 +24,7 @@ const Header = () => {
               </Link>
             </Typography>
           </Grid>
-          <Grid item sm={3}>
+          <Grid item sm={3} xs={12}>
             <Typography style={styles.headerText}>
               <Link
                 href="profile"
@@ -36,7 +36,7 @@ const Header = () => {
               </Link>
             </Typography>
           </Grid>
-          <Grid item sm={3}>
+          <Grid item sm={3} xs={12}>
             <Typography style={styles.headerText}>
               <Link
                 href="portfolio"
@@ -49,7 +49,7 @@ const Header = () => {
             </Typography>
           </Grid>
 
-          <Grid item sm={3}>
+          <Grid item sm={3} xs={12}>
             <Typography style={styles.headerText}>
               <Link
                 href="contact"

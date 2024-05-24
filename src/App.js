@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import styles from "./styles";
 import LandingPage from "./components/landingpage";
@@ -10,18 +10,28 @@ import CoverPage from "./components/coverpage";
 import Profile from "./components/profile";
 import Portfolio from "./components/portfolio";
 
-const router = createBrowserRouter([
-  { path: "/", element: <LandingPage /> },
-  {
-    path: "/home",
-    element: <LandingPage />,
-  },
-  { path: "/contact", element: <Contact /> },
-  { path: "/profile", element: <Profile /> },
-  { path: "/portfolio", element: <Portfolio /> },
-]);
-
 const App = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const router = createBrowserRouter([
+    { path: "/", element: <LandingPage windowWidth={windowWidth} /> },
+    { path: "/home", element: <LandingPage windowWidth={windowWidth} /> },
+    { path: "/contact", element: <Contact windowWidth={windowWidth} /> },
+    { path: "/profile", element: <Profile windowWidth={windowWidth} /> },
+    { path: "/portfolio", element: <Portfolio windowWidth={windowWidth} /> },
+  ]);
   return (
     <Box
       sx={{
@@ -31,7 +41,7 @@ const App = () => {
       }}
     >
       <Header />
-      <Box sx={{ height: "100vh", overflowY: "auto" }}>
+      <Box sx={{ height: "90vh", overflowY: "auto" }}>
         {/* <Box sx={{ overflowY: "auto" }}> */}
         <RouterProvider router={router} />
         <Footer />

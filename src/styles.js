@@ -17,9 +17,9 @@ const styles = {
   },
   //headers
   header: {
-    backgroundColor: `${colors.tertiary}60`,
-    position: "absolute",
-    zIndex: 3,
+    backgroundColor: `${colors.secondary}`,
+    // position: "absolute",
+    // zIndex: 3,
     height: "10vh",
     paddingX: 5,
     alignItems: "center",
@@ -28,15 +28,17 @@ const styles = {
   },
   headerLogo: {
     textAlign: "left",
+    color: colors.light,
   },
   headerText: {
     textAlign: "left",
+    color: colors.light,
   },
 
   //container
   container: {
     paddingX: 5,
-    backgroundColor: colors.light,
+    backgroundColor: colors.primary,
   },
 
   //footer

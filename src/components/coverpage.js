@@ -24,7 +24,7 @@ const CoverPage = () => {
         return (
           <img
             src={image.path}
-            style={{ height: "100vh" }}
+            style={{ height: "90vh" }}
             label={image.label}
             alt={image.label}
           />

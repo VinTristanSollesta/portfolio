@@ -83,18 +83,24 @@ const Profile = (props) => {
         sx={{
           backgroundColor: Colors.secondary,
           color: Colors.light,
-          padding: 10,
+          paddingY: 10,
+          paddingX: 5,
         }}
       >
         <Grid
           item
           xs={12}
-          sm={4}
-          md={4}
-          sx={{ border: "1px solid white", borderRadius: 5, padding: 4 }}
+          sm={12}
+          md={3.75}
+          sx={{
+            border: "1px solid white",
+            borderRadius: 5,
+            padding: 3,
+            margin: 0.5,
+          }}
         >
           <Box>
-            <Typography variant="h4">School</Typography>
+            <Typography variant="h4">Education</Typography>
           </Box>
           <Box>
             <Typography>
@@ -113,9 +119,14 @@ const Profile = (props) => {
         <Grid
           item
           xs={12}
-          sm={4}
-          md={4}
-          sx={{ border: "1px solid white", borderRadius: 5, padding: 4 }}
+          sm={12}
+          md={3.75}
+          sx={{
+            border: "1px solid white",
+            borderRadius: 5,
+            padding: 3,
+            margin: 0.5,
+          }}
         >
           <Typography variant="h4">Work Experiences</Typography>
           <Typography>Knode Software Services</Typography>
@@ -124,9 +135,14 @@ const Profile = (props) => {
         <Grid
           item
           xs={12}
-          sm={4}
-          md={4}
-          sx={{ border: "1px solid white", borderRadius: 5, padding: 4 }}
+          sm={12}
+          md={3.75}
+          sx={{
+            border: "1px solid white",
+            borderRadius: 5,
+            padding: 3,
+            margin: 0.5,
+          }}
         >
           <Typography variant="h4">Skills</Typography>
           <Typography>Web Designing</Typography>

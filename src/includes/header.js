@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import styles from "../styles";
+import { TheaterComedySharp } from "@mui/icons-material";
+import Colors from "../colors";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -54,7 +56,7 @@ const Header = () => {
       {/* Main Header Container */}
       <Grid container sx={styles.header}>
         {/* Header Logo */}
-        <Grid item xs={10} sm={6} sx={styles.headerLogo}>
+        <Grid item xs={11} sm={6} sx={styles.headerLogo}>
           <Typography variant="h5">VIN TRISTAN G. SOLLESTA</Typography>
         </Grid>
 
@@ -79,8 +81,16 @@ const Header = () => {
         </Grid>
 
         {/* Mobile Menu Button */}
-        <Grid item xs={2} sx={{ display: { sm: "none" }, textAlign: "right" }}>
+        <Grid
+          item
+          xs={1}
+          sx={{
+            display: { sm: "none" },
+            textAlign: "right",
+          }}
+        >
           <IconButton
+            sx={{ color: Colors.light }}
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerToggle}

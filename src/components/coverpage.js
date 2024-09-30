@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
-import Nezuko from "../assets/Nezuko.jpg";
-import Seraphine from "../assets/Seraphine.jpg";
+import Nezuko from "../assets/gallery/Nezuko.jpg";
+import Seraphine from "../assets/gallery/Seraphine.jpg";
 
 var count = 0;
 

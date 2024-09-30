@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import styles from "./styles";
-import LandingPage from "./components/landingpage";
 import Contact from "./components/contact";
 import Header from "./includes/header";
 import Footer from "./includes/footer";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CoverPage from "./components/coverpage";
 import Profile from "./components/profile";
 import Portfolio from "./components/portfolio";
+
+//typography
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 const App = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -26,8 +32,8 @@ const App = () => {
   }, []);
 
   const router = createBrowserRouter([
-    { path: "/", element: <LandingPage windowWidth={windowWidth} /> },
-    { path: "/home", element: <LandingPage windowWidth={windowWidth} /> },
+    { path: "/", element: <Profile windowWidth={windowWidth} /> },
+    { path: "/home", element: <Profile windowWidth={windowWidth} /> },
     { path: "/contact", element: <Contact windowWidth={windowWidth} /> },
     { path: "/profile", element: <Profile windowWidth={windowWidth} /> },
     { path: "/portfolio", element: <Portfolio windowWidth={windowWidth} /> },

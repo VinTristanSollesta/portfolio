@@ -9,7 +9,6 @@ import ProfilePicture from "../assets/pic.jpg";
 const Profile = (props) => {
   const [buttonPress, setButtonPress] = useState(false);
 
-  // Access the theme and create media queries
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
@@ -28,7 +27,7 @@ const Profile = (props) => {
             sx={{
               display: "flex",
               flexDirection: "row",
-              flexDirection: isSmallScreen ? "column" : "row", // Conditional flexDirection based on screen size
+              flexDirection: isSmallScreen ? "column" : "row",
             }}
           >
             <Grid
@@ -81,11 +80,61 @@ const Profile = (props) => {
       </Box>
       <Grid
         container
-        sx={{ height: "60vh", backgroundColor: Colors.secondary }}
+        sx={{
+          height: "60vh",
+          backgroundColor: Colors.secondary,
+          color: Colors.light,
+          padding: 10,
+        }}
       >
-        <Grid item xs={12} sm={4} md={4}></Grid>
-        <Grid item xs={12} sm={4} md={4}></Grid>
-        <Grid item xs={12} sm={4} md={4}></Grid>
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          md={4}
+          sx={{ border: "1px solid white", borderRadius: 15, padding: 5 }}
+        >
+          <Box>
+            <Typography variant="h4">School</Typography>
+          </Box>
+          <Box>
+            <Typography>
+              Elementary: Santa Barbara Central Elementary School
+            </Typography>
+          </Box>
+          <Box>
+            <Typography>High School: Iloilo National High School</Typography>
+          </Box>
+          <Box>
+            <Typography>
+              College: Iloilo Science and Technology University
+            </Typography>
+          </Box>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          md={4}
+          sx={{ border: "1px solid white", borderRadius: 15, padding: 5 }}
+        >
+          <Typography variant="h4">Work Experiences</Typography>
+          <Typography>Knode Software Services</Typography>
+          <Typography>Iloilo Science and Technology University</Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          md={4}
+          sx={{ border: "1px solid white", borderRadius: 15, padding: 5 }}
+        >
+          <Typography variant="h4">Skills</Typography>
+          <Typography>Web Designing</Typography>
+          <Typography>Graphics editing</Typography>
+          <Typography>Video editing</Typography>
+          <Typography>Programming</Typography>
+        </Grid>
       </Grid>
     </Box>
   );

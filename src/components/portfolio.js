@@ -1,7 +1,13 @@
 import React from "react";
 import { Box, Typography, Link } from "@mui/material";
+import Colors from "../colors";
+
 import Nezuko from "../assets/gallery/Nezuko.jpg";
 import Seraphine from "../assets/gallery/Seraphine.jpg";
+import Wendy from "../assets/gallery/wendyRV.jpg";
+import VectorAnne from "../assets/gallery/vector-anne.jpg";
+import VectorEin from "../assets/gallery/vector-ein.jpg";
+import VectorGiggs from "../assets/gallery/vector-giggs.jpg";
 
 const images = [
   {
@@ -11,6 +17,22 @@ const images = [
   {
     label: "Seraphine",
     path: Seraphine,
+  },
+  {
+    label: "Wendy (Shon Seung-wan)",
+    path: Wendy,
+  },
+  {
+    label: "Anne Vector Art",
+    path: VectorAnne,
+  },
+  {
+    label: "Ein Vector Art",
+    path: VectorEin,
+  },
+  {
+    label: "Giggs Vector Art",
+    path: VectorGiggs,
   },
 ];
 
@@ -29,19 +51,19 @@ const Portfolio = () => {
       <Box
         sx={{
           textAlign: "center",
-          m: 5,
-          p: 5,
+          m: 3,
+          p: 1,
           border: "1px solid gray",
-          borderRadius: 15,
+          backgroundColor: Colors.light,
+          borderRadius: 5,
         }}
       >
         <Typography variant="h4">Artworks</Typography>
         <Box
           sx={{
-            height: "100%",
             display: "flex",
-            justifyContent: "space-evenly",
-            alignItems: "center",
+            flexDirection: "row",
+            overflowX: "auto",
           }}
         >
           {images.map((image) => {
@@ -50,18 +72,20 @@ const Portfolio = () => {
               <Box
                 sx={{
                   display: "flex",
+                  margin: 1,
                   flexDirection: "column",
-                  boxShadow:
-                    "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+                  width: "320px",
                 }}
               >
                 <img
                   src={image.path}
-                  style={{ height: "20rem" }}
+                  style={{
+                    filter: "drop-shadow(4px 4px 2px gray)",
+                  }}
                   label={image.label}
                   alt={image.label}
                 />
-                <Typography style={{ textAlign: "center" }}>
+                <Typography variant="h6" style={{ textAlign: "center" }}>
                   {image.label}
                 </Typography>
               </Box>
@@ -75,7 +99,7 @@ const Portfolio = () => {
           m: 5,
           p: 5,
           border: "1px solid gray",
-          borderRadius: 15,
+          borderRadius: 5,
         }}
       >
         <Typography variant="h4">Websites</Typography>

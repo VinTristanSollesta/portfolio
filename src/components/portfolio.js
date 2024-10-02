@@ -26,11 +26,11 @@ const websites = [
 
 const Portfolio = () => {
   return (
-    <Box sx={{}}>
+    <Box sx={{ height: "80vh", overflowY: "auto" }}>
       <Box
         sx={{
           textAlign: "center",
-          m: 5,
+
           p: 5,
         }}
       >
@@ -38,33 +38,31 @@ const Portfolio = () => {
         <Box sx={{ display: "flex", flexWrap: "wrap" }}>
           {websites.map((website) => {
             return (
-              <Box
-                sx={{
-                  flexDirection: "column",
-                  paddingY: 3,
-                  border: "1px solid gray",
-                  borderRadius: 5,
-                  width: "150px",
-                  paddingX: 5,
-                  backgroundColor: Colors.light,
-                  m: 1,
-                  transition: "transform 0.3s, box-shadow 0.3s",
-                  "&:hover": {
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-                    transform: "scale(1.05)",
-                    cursor: "pointer",
-                  },
-                }}
-              >
-                <Box sx={{ height: "50px" }}>
-                  <img src={website.image} style={{ height: "100%" }} />
+              <Link href={website.link} underline="none">
+                <Box
+                  sx={{
+                    flexDirection: "column",
+                    paddingY: 3,
+                    border: "1px solid gray",
+                    borderRadius: 5,
+                    width: "150px",
+                    paddingX: 5,
+                    backgroundColor: Colors.light,
+                    m: 1,
+                    transition: "transform 0.3s, box-shadow 0.3s",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                      transform: "scale(1.05)",
+                      cursor: "pointer",
+                    },
+                  }}
+                >
+                  <Box sx={{ height: "50px" }}>
+                    <img src={website.image} style={{ height: "100%" }} />
+                  </Box>
+                  <Typography>{website.name}</Typography>
                 </Box>
-                <Typography>
-                  <Link href={website.link} underline="none">
-                    {website.name}
-                  </Link>
-                </Typography>
-              </Box>
+              </Link>
             );
           })}
         </Box>

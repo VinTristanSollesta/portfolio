@@ -41,11 +41,10 @@ const Gallery = () => {
     <Box
       sx={{
         textAlign: "center",
-        m: 3,
-        p: 1,
         border: "1px solid gray",
         backgroundColor: Colors.light,
         borderRadius: 5,
+        height: "80vh",
       }}
     >
       <Typography variant="h4">Artworks</Typography>
@@ -54,6 +53,7 @@ const Gallery = () => {
           display: "flex",
           flexDirection: "row",
           overflowX: "auto",
+          scrollbarWidth: "none",
         }}
       >
         {images.map((image) => {
@@ -64,7 +64,7 @@ const Gallery = () => {
                 display: "flex",
                 margin: 1,
                 flexDirection: "column",
-                width: "320px",
+                width: "280px",
               }}
             >
               <img

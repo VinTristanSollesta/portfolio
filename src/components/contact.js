@@ -14,8 +14,8 @@ const Contact = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: 5,
-        height: "70vh",
+        paddingX: 5,
+        height: "80vh",
       }}
     >
       <Typography variant="h3">Contact Us</Typography>

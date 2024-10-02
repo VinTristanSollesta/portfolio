@@ -46,11 +46,12 @@ const styles = {
   //footer
   footerContainer: {
     display: "flex",
-    height: "30vh",
+    height: "10vh",
     alignItems: "center",
     textAlign: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
     // backgroundColor: `${colors.tertiary}60`,
+    paddingX: 5,
   },
   linkFooterStyle: {
     display: "flex",

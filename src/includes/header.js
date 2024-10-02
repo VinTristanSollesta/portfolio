@@ -33,7 +33,7 @@ const Header = () => {
         VIN TRISTAN G. SOLLESTA
       </Typography>
       <List>
-        {["Profile", "Portfolio", "Contact"].map((text) => (
+        {["Profile", "Portfolio", "Gallery", "Contact"].map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemText>
               <Link
@@ -63,8 +63,20 @@ const Header = () => {
         {/* Desktop Menu Links */}
         <Grid item sm={6} sx={{ display: { xs: "none", sm: "block" } }}>
           <Grid container>
-            {["Profile", "Portfolio", "Contact"].map((text) => (
-              <Grid item sm={3} key={text}>
+            {["Profile", "Portfolio", "Gallery", "Contact"].map((text) => (
+              <Grid
+                item
+                sm={3}
+                key={text}
+                sx={{
+                  transition: "transform 0.3s, box-shadow 0.3s",
+                  "&:hover": {
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                    transform: "scale(1.05)",
+                    cursor: "pointer",
+                  },
+                }}
+              >
                 <Typography style={styles.headerText}>
                   <Link
                     href={text.toLowerCase()}

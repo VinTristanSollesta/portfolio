@@ -15,6 +15,7 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+import Gallery from "./components/gallery";
 
 const App = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -33,9 +34,9 @@ const App = () => {
 
   const router = createBrowserRouter([
     { path: "/", element: <Profile windowWidth={windowWidth} /> },
-    { path: "/home", element: <Profile windowWidth={windowWidth} /> },
-    { path: "/contact", element: <Contact windowWidth={windowWidth} /> },
     { path: "/profile", element: <Profile windowWidth={windowWidth} /> },
+    { path: "/contact", element: <Contact windowWidth={windowWidth} /> },
+    { path: "/gallery", element: <Gallery windowWidth={windowWidth} /> },
     { path: "/portfolio", element: <Portfolio windowWidth={windowWidth} /> },
   ]);
   return (

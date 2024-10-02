@@ -30,6 +30,9 @@ const Footer = () => {
         >
           <FacebookIcon />
         </a>
+        <Box sx={{ marginLeft: "auto" }}>
+          <Typography>All rights reserved 2024 ⓒ</Typography>
+        </Box>
       </Box>
     </Box>
   );

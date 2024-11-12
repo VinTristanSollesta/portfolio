@@ -19,7 +19,7 @@ const Contact = () => {
       }}
     >
       <Typography variant="h3">Contact Us</Typography>
-      <Box sx={{ width: "400px", alignSelf: "center" }}>
+      <Box sx={{ width: "300px", alignSelf: "center", p: 2 }}>
         <TextField
           label="Email"
           variant="outlined"

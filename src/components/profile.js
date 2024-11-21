@@ -48,7 +48,7 @@ const Profile = (props) => {
                   width: "300px",
                 }}
               >
-                <img src={ProfilePicture} style={{ borderRadius: 250 }} />
+                <img src={ProfilePicture} style={{ borderRadius: 25 }} />
               </Grid>
 
               <Grid

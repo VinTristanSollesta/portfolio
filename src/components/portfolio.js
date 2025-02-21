@@ -17,11 +17,11 @@ const websites = [
     link: "https://artistech.vercel.app",
     image: ArtisTechLogo,
   },
-  {
-    name: "RePalette",
-    link: "https://repalette.vercel.app",
-    image: RePalette,
-  },
+  // {
+  //   name: "RePalette",
+  //   link: "https://repalette.vercel.app",
+  //   image: RePalette,
+  // },
 ];
 
 const Portfolio = () => {

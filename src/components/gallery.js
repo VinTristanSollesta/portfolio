@@ -45,42 +45,52 @@ const Gallery = () => {
         backgroundColor: Colors.light,
         borderRadius: 5,
         height: "80vh",
+        margin: 5,
       }}
     >
       <Typography variant="h4">Artworks</Typography>
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
           overflowX: "auto",
-          scrollbarWidth: "none",
+          justifyContent: "center",
         }}
       >
-        {images.map((image) => {
-          console.log(image);
-          return (
-            <Box
-              sx={{
-                display: "flex",
-                margin: 1,
-                flexDirection: "column",
-                width: "280px",
-              }}
-            >
-              <img
-                src={image.path}
-                style={{
-                  filter: "drop-shadow(4px 4px 2px gray)",
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            overflowX: "auto",
+            scrollbarWidth: "none",
+            padding: 3,
+          }}
+        >
+          {images.map((image) => {
+            console.log(image);
+            return (
+              <Box
+                sx={{
+                  display: "flex",
+                  margin: 1,
+                  flexDirection: "column",
+                  width: "300px",
                 }}
-                label={image.label}
-                alt={image.label}
-              />
-              <Typography variant="h6" style={{ textAlign: "center" }}>
-                {image.label}
-              </Typography>
-            </Box>
-          );
-        })}
+              >
+                <img
+                  src={image.path}
+                  style={{
+                    filter: "drop-shadow(4px 4px 2px gray)",
+                  }}
+                  label={image.label}
+                  alt={image.label}
+                />
+                <Typography variant="h6" style={{ textAlign: "center" }}>
+                  {image.label}
+                </Typography>
+              </Box>
+            );
+          })}
+        </Box>
       </Box>
     </Box>
   );

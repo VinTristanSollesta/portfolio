@@ -44,7 +44,7 @@ const Profile = (props) => {
                 sx={{
                   display: "flex",
                   justifyContent: "center",
-                  height: "300px",
+                  height: "400px",
                   width: "300px",
                 }}
               >

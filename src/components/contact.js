@@ -7,6 +7,17 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [emailBody, setEmailBody] = useState("");
   const [emailButton, setEmailButton] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSend = () => {
+    if (!email || !emailBody) {
+      setError("Please fill in both fields.");
+      return;
+    }
+    setError("");
+    const mailto = `mailto:vintristan.sollesta@gmail.com?subject=Message from ${encodeURIComponent(email)}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = mailto;
+  };
 
   return (
     <Box
@@ -29,15 +40,19 @@ const Contact = () => {
           textAlign: "center",
         }}
       >
-        <Typography variant="h3">Contact Us</Typography>
+        <Typography variant="h3" sx={{ mb: 2, color: "#160C28" }}>
+          Let's Connect! Send Me an Email 📧
+        </Typography>
         <Box sx={{ width: "300px", alignSelf: "center", p: 2 }}>
           <TextField
-            label="Email"
+            label="Your Email"
             variant="outlined"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             sx={{ display: "flex", my: 2 }}
             inputMode="email"
+            type="email"
+            required
           />
 
           <TextField
@@ -48,12 +63,15 @@ const Contact = () => {
             value={emailBody}
             onChange={(e) => setEmailBody(e.target.value)}
             sx={{ display: "flex", my: 2 }}
+            required
           />
+          {error && (
+            <Typography color="error" sx={{ mb: 1 }}>
+              {error}
+            </Typography>
+          )}
           <Button
-            onClick={() => {
-              console.log("Email: " + email);
-              console.log("Message: " + emailBody);
-            }}
+            onClick={handleSend}
             variant="contained"
             sx={{ display: "flex", width: "100%" }}
           >

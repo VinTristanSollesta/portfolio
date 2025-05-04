@@ -12,11 +12,142 @@ import { motion } from "framer-motion";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import Colors from "../colors";
 import styles from "../styles";
 
 import ProfilePicture from "../assets/pic.jpg";
+
+const educationItems = [
+  {
+    label: "Elementary: Santa Barbara Central Elementary School",
+    img: "https://via.placeholder.com/150x100?text=Elementary",
+  },
+  {
+    label: "High School: Iloilo National High School",
+    img: "https://via.placeholder.com/150x100?text=High+School",
+  },
+  {
+    label: "College: Iloilo Science and Technology University",
+    img: "https://via.placeholder.com/150x100?text=College",
+  },
+];
+
+const workItems = [
+  {
+    label: "Knode Software Services",
+    img: "https://via.placeholder.com/150x100?text=Knode",
+  },
+  {
+    label: "Iloilo Science and Technology University",
+    img: "https://via.placeholder.com/150x100?text=ISAT+U",
+  },
+];
+
+const skillsItems = [
+  {
+    label: "Web Designing",
+    img: "https://via.placeholder.com/150x100?text=Web+Design",
+  },
+  {
+    label: "Graphics editing",
+    img: "https://via.placeholder.com/150x100?text=Graphics",
+  },
+  {
+    label: "Video editing",
+    img: "https://via.placeholder.com/150x100?text=Video",
+  },
+  {
+    label: "Programming",
+    img: "https://via.placeholder.com/150x100?text=Programming",
+  },
+];
+
+function Carousel({ items, title }) {
+  const [index, setIndex] = useState(0);
+  const handlePrev = () =>
+    setIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
+  const handleNext = () =>
+    setIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
+
+  return (
+    <Box
+      sx={{
+        border: "1px solid white",
+        borderRadius: 5,
+        padding: 3,
+        margin: 0.5,
+        cursor: "pointer",
+        background: Colors.secondary,
+        color: Colors.light,
+        minHeight: 250,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+      }}
+    >
+      <Typography variant="h4" sx={{ mb: 2 }}>
+        {title}
+      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+        }}
+      >
+        <IconButton onClick={handlePrev} sx={{ color: Colors.light }}>
+          <ArrowBackIosNewIcon />
+        </IconButton>
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.4 }}
+          style={{ width: 180, textAlign: "center" }}
+        >
+          <img
+            src={items[index].img}
+            alt={items[index].label}
+            style={{
+              width: "100%",
+              height: 100,
+              objectFit: "cover",
+              borderRadius: 8,
+              marginBottom: 8,
+            }}
+          />
+          <Typography variant="h6">{items[index].label}</Typography>
+        </motion.div>
+        <IconButton onClick={handleNext} sx={{ color: Colors.light }}>
+          <ArrowForwardIosIcon />
+        </IconButton>
+      </Box>
+      <Box sx={{ mt: 1 }}>
+        {items.map((_, i) => (
+          <Box
+            key={i}
+            sx={{
+              display: "inline-block",
+              width: 10,
+              height: 10,
+              borderRadius: "50%",
+              background: i === index ? Colors.primary : Colors.light,
+              opacity: i === index ? 1 : 0.4,
+              mx: 0.5,
+            }}
+          />
+        ))}
+      </Box>
+    </Box>
+  );
+}
 
 const Profile = (props) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -223,77 +354,14 @@ const Profile = (props) => {
           paddingX: 5,
         }}
       >
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={3.75}
-          component={motion.div}
-          whileHover={{ scale: 1.02 }}
-          sx={{
-            border: "1px solid white",
-            borderRadius: 5,
-            padding: 3,
-            margin: 0.5,
-            cursor: "pointer",
-          }}
-        >
-          <Box>
-            <Typography variant="h4">Education</Typography>
-          </Box>
-          <Box>
-            <Typography>
-              Elementary: Santa Barbara Central Elementary School
-            </Typography>
-          </Box>
-          <Box>
-            <Typography>High School: Iloilo National High School</Typography>
-          </Box>
-          <Box>
-            <Typography>
-              College: Iloilo Science and Technology University
-            </Typography>
-          </Box>
+        <Grid item xs={12} sm={12} md={4}>
+          <Carousel items={educationItems} title="Education" />
         </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={3.75}
-          component={motion.div}
-          whileHover={{ scale: 1.02 }}
-          sx={{
-            border: "1px solid white",
-            borderRadius: 5,
-            padding: 3,
-            margin: 0.5,
-            cursor: "pointer",
-          }}
-        >
-          <Typography variant="h4">Work Experiences</Typography>
-          <Typography>Knode Software Services</Typography>
-          <Typography>Iloilo Science and Technology University</Typography>
+        <Grid item xs={12} sm={12} md={4}>
+          <Carousel items={workItems} title="Work Experiences" />
         </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={3.75}
-          component={motion.div}
-          whileHover={{ scale: 1.02 }}
-          sx={{
-            border: "1px solid white",
-            borderRadius: 5,
-            padding: 3,
-            margin: 0.5,
-            cursor: "pointer",
-          }}
-        >
-          <Typography variant="h4">Skills</Typography>
-          <Typography>Web Designing</Typography>
-          <Typography>Graphics editing</Typography>
-          <Typography>Video editing</Typography>
-          <Typography>Programming</Typography>
+        <Grid item xs={12} sm={12} md={4}>
+          <Carousel items={skillsItems} title="Skills" />
         </Grid>
       </Grid>
     </Box>

@@ -116,10 +116,10 @@ function Carousel({ items, title }) {
             src={items[index].img}
             alt={items[index].label}
             style={{
-              width: "100%",
-              height: 100,
+              width: 120,
+              height: 120,
               objectFit: "cover",
-              borderRadius: 8,
+              borderRadius: 0,
               marginBottom: 8,
             }}
           />
@@ -302,10 +302,11 @@ const Profile = (props) => {
                   <Typography
                     variant={isSmallScreen ? "h4" : "h2"}
                     sx={{
-                      background: `linear-gradient(45deg, ${Colors.primary}, ${Colors.secondary})`,
+                      background: `linear-gradient(90deg, ${Colors.secondary} 30%, #EFCB68 70%)`,
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       fontWeight: "bold",
+                      textShadow: "1px 1px 6px rgba(0,0,0,0.25)",
                     }}
                   >
                     Hi! I'm Vin!

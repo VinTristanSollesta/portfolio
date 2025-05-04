@@ -44,9 +44,7 @@ const Gallery = () => {
         border: "1px solid gray",
         backgroundColor: Colors.light,
         borderRadius: 5,
-        height: "100vh",
         margin: 5,
-        overflowY: "auto",
         padding: 3,
       }}
     >
@@ -81,7 +79,6 @@ const Gallery = () => {
             <Box
               sx={{
                 width: "100%",
-                height: "auto",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -89,7 +86,6 @@ const Gallery = () => {
                 boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                 backgroundColor: "white",
                 padding: 2,
-                aspectRatio: "1",
               }}
             >
               <img
@@ -97,8 +93,6 @@ const Gallery = () => {
                 alt={image.label}
                 style={{
                   maxWidth: "100%",
-                  maxHeight: "100%",
-                  width: "auto",
                   height: "auto",
                   objectFit: "contain",
                 }}

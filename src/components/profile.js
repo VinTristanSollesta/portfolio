@@ -23,26 +23,26 @@ import ProfilePicture from "../assets/pic.jpg";
 const educationItems = [
   {
     label: "Elementary: Santa Barbara Central Elementary School",
-    img: "https://via.placeholder.com/150x100?text=Elementary",
+    img: "https://scontent.filo1-1.fna.fbcdn.net/v/t39.30808-6/366625582_131587830002568_8534647509850529161_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFeSwqH3CjpEoFSos_rGWXoG_mZ2qfOQ9Qb-Znap85D1MsCbq2028GiOoxAWTy6nCIcBWy94uWxClUDL0iitxGt&_nc_ohc=-YFFjPzQCQYQ7kNvwGgRujX&_nc_oc=AdkLXWqQhb4jJN2mM4nt0597ssNqRfGdx_tUICbp33cJg7aEF2qzsaKfx7WJpxH1h28&_nc_zt=23&_nc_ht=scontent.filo1-1.fna&_nc_gid=3p6TZb4_tR9B-b6MDrsS7Q&oh=00_AfGz3L8a4YSUfrATsqqrGgMunHu8GIPovAjmZ2QlWj6H8Q&oe=681D516B",
   },
   {
     label: "High School: Iloilo National High School",
-    img: "https://via.placeholder.com/150x100?text=High+School",
+    img: "https://iloilonhs.edu.ph/upload/system_file/logo.png",
   },
   {
     label: "College: Iloilo Science and Technology University",
-    img: "https://via.placeholder.com/150x100?text=College",
+    img: "https://www.isatu.edu.ph/wp-content/uploads/2019/02/ISAT-U-logo-2-768x768.png",
   },
 ];
 
 const workItems = [
   {
     label: "Knode Software Services",
-    img: "https://via.placeholder.com/150x100?text=Knode",
+    img: "https://knodesoft.com/assets/Knode-logo.png",
   },
   {
     label: "Iloilo Science and Technology University",
-    img: "https://via.placeholder.com/150x100?text=ISAT+U",
+    img: "https://www.isatu.edu.ph/wp-content/uploads/2019/02/ISAT-U-logo-2-768x768.png",
   },
 ];
 

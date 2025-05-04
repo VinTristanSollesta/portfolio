@@ -78,7 +78,8 @@ const Gallery = () => {
           >
             <Box
               sx={{
-                width: "80%",
+                width: "100%",
+                height: { xs: "auto", sm: "300px", md: "300px" },
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -86,15 +87,16 @@ const Gallery = () => {
                 boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                 backgroundColor: "white",
                 padding: 2,
+                overflow: "hidden",
               }}
             >
               <img
                 src={image.path}
                 alt={image.label}
                 style={{
-                  maxWidth: "100%",
-                  height: "auto",
-                  objectFit: "contain",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
                 }}
               />
             </Box>

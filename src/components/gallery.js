@@ -46,51 +46,69 @@ const Gallery = () => {
         borderRadius: 5,
         height: "80vh",
         margin: 5,
+        overflowY: "auto",
+        padding: 3,
       }}
     >
-      <Typography variant="h4">Artworks</Typography>
+      <Typography variant="h4" sx={{ mb: 3 }}>
+        Artworks
+      </Typography>
       <Box
         sx={{
-          display: "flex",
-          overflowX: "auto",
-          justifyContent: "center",
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "repeat(2, 1fr)",
+            md: "repeat(3, 1fr)",
+          },
+          gap: 3,
+          padding: 2,
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            overflowX: "auto",
-            scrollbarWidth: "none",
-            padding: 3,
-          }}
-        >
-          {images.map((image) => {
-            console.log(image);
-            return (
-              <Box
-                sx={{
-                  display: "flex",
-                  margin: 1,
-                  flexDirection: "column",
-                  width: "300px",
+        {images.map((image, index) => (
+          <Box
+            key={index}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              transition: "transform 0.2s",
+              "&:hover": {
+                transform: "scale(1.02)",
+              },
+            }}
+          >
+            <Box
+              sx={{
+                width: "100%",
+                height: "300px",
+                overflow: "hidden",
+                borderRadius: 2,
+                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+              }}
+            >
+              <img
+                src={image.path}
+                alt={image.label}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
                 }}
-              >
-                <img
-                  src={image.path}
-                  style={{
-                    filter: "drop-shadow(4px 4px 2px gray)",
-                  }}
-                  label={image.label}
-                  alt={image.label}
-                />
-                <Typography variant="h6" style={{ textAlign: "center" }}>
-                  {image.label}
-                </Typography>
-              </Box>
-            );
-          })}
-        </Box>
+              />
+            </Box>
+            <Typography
+              variant="h6"
+              sx={{
+                mt: 2,
+                textAlign: "center",
+                color: Colors.dark,
+              }}
+            >
+              {image.label}
+            </Typography>
+          </Box>
+        ))}
       </Box>
     </Box>
   );

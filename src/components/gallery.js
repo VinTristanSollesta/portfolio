@@ -60,7 +60,7 @@ const Gallery = () => {
             md: "repeat(2, 1fr)",
           },
           gap: 3,
-          padding: 2,
+          // padding: 2,
         }}
       >
         {images.map((image, index) => (

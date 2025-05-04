@@ -44,7 +44,7 @@ const Gallery = () => {
         border: "1px solid gray",
         backgroundColor: Colors.light,
         borderRadius: 5,
-        height: "80vh",
+        height: "100vh",
         margin: 5,
         overflowY: "auto",
         padding: 3,
@@ -59,7 +59,7 @@ const Gallery = () => {
           gridTemplateColumns: {
             xs: "1fr",
             sm: "repeat(2, 1fr)",
-            md: "repeat(3, 1fr)",
+            md: "repeat(2, 1fr)",
           },
           gap: 3,
           padding: 2,
@@ -89,6 +89,7 @@ const Gallery = () => {
                 boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                 backgroundColor: "white",
                 padding: 2,
+                aspectRatio: "1",
               }}
             >
               <img
@@ -96,7 +97,7 @@ const Gallery = () => {
                 alt={image.label}
                 style={{
                   maxWidth: "100%",
-                  maxHeight: "400px",
+                  maxHeight: "100%",
                   width: "auto",
                   height: "auto",
                   objectFit: "contain",

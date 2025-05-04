@@ -67,10 +67,20 @@ const skillsItems = [
 
 function Carousel({ items, title }) {
   const [index, setIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
   const handlePrev = () =>
     setIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
   const handleNext = () =>
     setIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
+
+  React.useEffect(() => {
+    if (isHovered) return;
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [isHovered, items.length]);
 
   return (
     <Box
@@ -78,7 +88,7 @@ function Carousel({ items, title }) {
         border: "1px solid white",
         borderRadius: 5,
         padding: 3,
-        margin: 0.5,
+        marginY: 2,
         cursor: "pointer",
         background: Colors.secondary,
         color: Colors.light,
@@ -88,7 +98,11 @@ function Carousel({ items, title }) {
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
+        width: "100%",
+        maxWidth: "100vw",
       }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <Typography variant="h4" sx={{ mb: 2 }}>
         {title}
@@ -352,16 +366,18 @@ const Profile = (props) => {
           backgroundColor: Colors.secondary,
           color: Colors.light,
           paddingY: 10,
-          paddingX: 5,
+          paddingX: 0,
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <Grid item xs={12} sm={12} md={4}>
+        <Grid item xs={12} sx={{ width: "100%" }}>
           <Carousel items={educationItems} title="Education" />
         </Grid>
-        <Grid item xs={12} sm={12} md={4}>
+        <Grid item xs={12} sx={{ width: "100%" }}>
           <Carousel items={workItems} title="Work Experiences" />
         </Grid>
-        <Grid item xs={12} sm={12} md={4}>
+        <Grid item xs={12} sx={{ width: "100%" }}>
           <Carousel items={skillsItems} title="Skills" />
         </Grid>
       </Grid>

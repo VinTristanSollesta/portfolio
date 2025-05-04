@@ -59,8 +59,8 @@ const Gallery = () => {
             sm: "repeat(2, 1fr)",
             md: "repeat(2, 1fr)",
           },
-          gap: 3,
-          // padding: 2,
+          gap: 4,
+          padding: 3,
         }}
       >
         {images.map((image, index) => (
@@ -78,7 +78,7 @@ const Gallery = () => {
           >
             <Box
               sx={{
-                width: "100%",
+                width: "80%",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",

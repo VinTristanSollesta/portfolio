@@ -94,9 +94,11 @@ const Gallery = () => {
                 src={image.path}
                 alt={image.label}
                 style={{
-                  width: "100%",
-                  height: "100%",
+                  maxWidth: "100%",
+                  maxHeight: "100%",
                   objectFit: "contain",
+                  display: "block",
+                  margin: "auto",
                   background: "#fff",
                 }}
               />

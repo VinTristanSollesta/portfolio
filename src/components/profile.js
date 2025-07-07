@@ -44,6 +44,10 @@ const workItems = [
     label: "Iloilo Science and Technology University",
     img: "https://www.isatu.edu.ph/wp-content/uploads/2019/02/ISAT-U-logo-2-768x768.png",
   },
+  {
+    label: "Ateneo De Iloilo",
+    img: "https://en.wikipedia.org/wiki/Ateneo_de_Iloilo",
+  },
 ];
 
 const skillsItems = [
@@ -87,19 +91,19 @@ function Carousel({ items, title }) {
       sx={{
         border: "1px solid white",
         borderRadius: 5,
-        padding: 3,
-        marginY: 2,
+        padding: { xs: 2, sm: 3 },
+        marginY: { xs: 1, sm: 2 },
         cursor: "pointer",
         background: Colors.secondary,
         color: Colors.light,
-        minHeight: 250,
+        minHeight: { xs: 200, sm: 250 },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
         width: "100%",
-        maxWidth: "100vw",
+        maxWidth: "100%",
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -124,17 +128,18 @@ function Carousel({ items, title }) {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.4 }}
-          style={{ width: 180, textAlign: "center" }}
+          style={{ width: 160, textAlign: "center" }}
         >
           <img
             src={items[index].img}
             alt={items[index].label}
             style={{
-              width: 120,
-              height: 120,
+              width: 100,
+              height: 100,
               objectFit: "cover",
               borderRadius: 0,
               marginBottom: 8,
+              maxWidth: "100%",
             }}
           />
           <Typography variant="h6">{items[index].label}</Typography>
@@ -199,8 +204,13 @@ const Profile = (props) => {
         animate="visible"
         variants={containerVariants}
         sx={[
-          { height: "90vh", alignItems: "center", display: "flex" },
-          styles.container,
+          {
+            minHeight: "80vh",
+            alignItems: "center",
+            display: "flex",
+            paddingX: { xs: 2, sm: 3, md: 5 },
+            paddingY: 2,
+          },
         ]}
       >
         <Box width={"100%"}>
@@ -242,9 +252,10 @@ const Profile = (props) => {
                       src={ProfilePicture}
                       style={{
                         borderRadius: 25,
-                        width: isSmallScreen ? "250px" : "300px",
-                        height: isSmallScreen ? "250px" : "300px",
+                        width: isSmallScreen ? "200px" : "280px",
+                        height: isSmallScreen ? "200px" : "280px",
                         objectFit: "cover",
+                        maxWidth: "100%",
                       }}
                     />
                     <Box
@@ -264,8 +275,10 @@ const Profile = (props) => {
                         transition: "opacity 0.3s ease",
                       }}
                     >
+                      <a href=""></a>
                       <Box sx={{ display: "flex", gap: 2 }}>
                         <Tooltip title="LinkedIn">
+                          <a href="www.linkedin.com/VinTristanSollesta"></a>
                           <IconButton
                             sx={{
                               color: "white",
@@ -276,6 +289,7 @@ const Profile = (props) => {
                           </IconButton>
                         </Tooltip>
                         <Tooltip title="GitHub">
+                          <a href="www.github.com/VinTristanSollesta"></a>
                           <IconButton
                             sx={{
                               color: "white",
@@ -365,19 +379,19 @@ const Profile = (props) => {
         sx={{
           backgroundColor: Colors.secondary,
           color: Colors.light,
-          paddingY: 10,
-          paddingX: 0,
+          paddingY: { xs: 4, sm: 6, md: 8 },
+          paddingX: { xs: 2, sm: 3, md: 4 },
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <Grid item xs={12} sx={{ width: "100%" }}>
+        <Grid item xs={12} sx={{ width: "100%", paddingX: { xs: 1, sm: 2 } }}>
           <Carousel items={educationItems} title="Education" />
         </Grid>
-        <Grid item xs={12} sx={{ width: "100%" }}>
+        <Grid item xs={12} sx={{ width: "100%", paddingX: { xs: 1, sm: 2 } }}>
           <Carousel items={workItems} title="Work Experiences" />
         </Grid>
-        <Grid item xs={12} sx={{ width: "100%" }}>
+        <Grid item xs={12} sx={{ width: "100%", paddingX: { xs: 1, sm: 2 } }}>
           <Carousel items={skillsItems} title="Skills" />
         </Grid>
       </Grid>
